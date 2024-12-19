@@ -1,0 +1,265 @@
+
+simpleDIO.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000017c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000001f0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000006  00800060  00800060  000001f0  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000001f0  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000220  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000070  00000000  00000000  0000025c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000007c0  00000000  00000000  000002cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000617  00000000  00000000  00000a8c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000487  00000000  00000000  000010a3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000180  00000000  00000000  0000152c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000050cc  00000000  00000000  000016ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000037b  00000000  00000000  00006778  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000050  00000000  00000000  00006af3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  000000c4  00000000  00000000  00006b43  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	29 c0       	rjmp	.+82     	; 0x54 <__ctors_end>
+   2:	00 00       	nop
+   4:	6b c0       	rjmp	.+214    	; 0xdc <__vector_1>
+   6:	00 00       	nop
+   8:	90 c0       	rjmp	.+288    	; 0x12a <__vector_2>
+   a:	00 00       	nop
+   c:	40 c0       	rjmp	.+128    	; 0x8e <__vector_3>
+   e:	00 00       	nop
+  10:	3c c0       	rjmp	.+120    	; 0x8a <__bad_interrupt>
+  12:	00 00       	nop
+  14:	3a c0       	rjmp	.+116    	; 0x8a <__bad_interrupt>
+  16:	00 00       	nop
+  18:	38 c0       	rjmp	.+112    	; 0x8a <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	36 c0       	rjmp	.+108    	; 0x8a <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	34 c0       	rjmp	.+104    	; 0x8a <__bad_interrupt>
+  22:	00 00       	nop
+  24:	32 c0       	rjmp	.+100    	; 0x8a <__bad_interrupt>
+  26:	00 00       	nop
+  28:	30 c0       	rjmp	.+96     	; 0x8a <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	2e c0       	rjmp	.+92     	; 0x8a <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	2c c0       	rjmp	.+88     	; 0x8a <__bad_interrupt>
+  32:	00 00       	nop
+  34:	2a c0       	rjmp	.+84     	; 0x8a <__bad_interrupt>
+  36:	00 00       	nop
+  38:	28 c0       	rjmp	.+80     	; 0x8a <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	26 c0       	rjmp	.+76     	; 0x8a <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	24 c0       	rjmp	.+72     	; 0x8a <__bad_interrupt>
+  42:	00 00       	nop
+  44:	22 c0       	rjmp	.+68     	; 0x8a <__bad_interrupt>
+  46:	00 00       	nop
+  48:	20 c0       	rjmp	.+64     	; 0x8a <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	1e c0       	rjmp	.+60     	; 0x8a <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	1c c0       	rjmp	.+56     	; 0x8a <__bad_interrupt>
+	...
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ec e7       	ldi	r30, 0x7C	; 124
+  68:	f1 e0       	ldi	r31, 0x01	; 1
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	20 e0       	ldi	r18, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a6 36       	cpi	r26, 0x66	; 102
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	02 d0       	rcall	.+4      	; 0x8c <main>
+  88:	77 c0       	rjmp	.+238    	; 0x178 <_exit>
+
+0000008a <__bad_interrupt>:
+  8a:	ba cf       	rjmp	.-140    	; 0x0 <__vectors>
+
+0000008c <main>:
+#include "memory_map.h"
+#include "MCAL/DIO_Interface.h"
+#define F_CPU	8000000UL
+#include <util/delay.h>
+
+int main(){
+  8c:	ff cf       	rjmp	.-2      	; 0x8c <main>
+
+0000008e <__vector_3>:
+
+void EXT_INT_Clear_Function(EXT_t ext){
+	CallBack[ext]=NULL;
+}
+
+ISR(VECT_INT2){
+  8e:	1f 92       	push	r1
+  90:	0f 92       	push	r0
+  92:	0f b6       	in	r0, 0x3f	; 63
+  94:	0f 92       	push	r0
+  96:	11 24       	eor	r1, r1
+  98:	2f 93       	push	r18
+  9a:	3f 93       	push	r19
+  9c:	4f 93       	push	r20
+  9e:	5f 93       	push	r21
+  a0:	6f 93       	push	r22
+  a2:	7f 93       	push	r23
+  a4:	8f 93       	push	r24
+  a6:	9f 93       	push	r25
+  a8:	af 93       	push	r26
+  aa:	bf 93       	push	r27
+  ac:	ef 93       	push	r30
+  ae:	ff 93       	push	r31
+	CallBack[0]();
+  b0:	e0 91 60 00 	lds	r30, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  b4:	f0 91 61 00 	lds	r31, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  b8:	09 95       	icall
+}
+  ba:	ff 91       	pop	r31
+  bc:	ef 91       	pop	r30
+  be:	bf 91       	pop	r27
+  c0:	af 91       	pop	r26
+  c2:	9f 91       	pop	r25
+  c4:	8f 91       	pop	r24
+  c6:	7f 91       	pop	r23
+  c8:	6f 91       	pop	r22
+  ca:	5f 91       	pop	r21
+  cc:	4f 91       	pop	r20
+  ce:	3f 91       	pop	r19
+  d0:	2f 91       	pop	r18
+  d2:	0f 90       	pop	r0
+  d4:	0f be       	out	0x3f, r0	; 63
+  d6:	0f 90       	pop	r0
+  d8:	1f 90       	pop	r1
+  da:	18 95       	reti
+
+000000dc <__vector_1>:
+
+ISR(VECT_INT0){
+  dc:	1f 92       	push	r1
+  de:	0f 92       	push	r0
+  e0:	0f b6       	in	r0, 0x3f	; 63
+  e2:	0f 92       	push	r0
+  e4:	11 24       	eor	r1, r1
+  e6:	2f 93       	push	r18
+  e8:	3f 93       	push	r19
+  ea:	4f 93       	push	r20
+  ec:	5f 93       	push	r21
+  ee:	6f 93       	push	r22
+  f0:	7f 93       	push	r23
+  f2:	8f 93       	push	r24
+  f4:	9f 93       	push	r25
+  f6:	af 93       	push	r26
+  f8:	bf 93       	push	r27
+  fa:	ef 93       	push	r30
+  fc:	ff 93       	push	r31
+	CallBack[1]();
+  fe:	e0 91 62 00 	lds	r30, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 102:	f0 91 63 00 	lds	r31, 0x0063	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+ 106:	09 95       	icall
+}
+ 108:	ff 91       	pop	r31
+ 10a:	ef 91       	pop	r30
+ 10c:	bf 91       	pop	r27
+ 10e:	af 91       	pop	r26
+ 110:	9f 91       	pop	r25
+ 112:	8f 91       	pop	r24
+ 114:	7f 91       	pop	r23
+ 116:	6f 91       	pop	r22
+ 118:	5f 91       	pop	r21
+ 11a:	4f 91       	pop	r20
+ 11c:	3f 91       	pop	r19
+ 11e:	2f 91       	pop	r18
+ 120:	0f 90       	pop	r0
+ 122:	0f be       	out	0x3f, r0	; 63
+ 124:	0f 90       	pop	r0
+ 126:	1f 90       	pop	r1
+ 128:	18 95       	reti
+
+0000012a <__vector_2>:
+ISR(VECT_INT1){
+ 12a:	1f 92       	push	r1
+ 12c:	0f 92       	push	r0
+ 12e:	0f b6       	in	r0, 0x3f	; 63
+ 130:	0f 92       	push	r0
+ 132:	11 24       	eor	r1, r1
+ 134:	2f 93       	push	r18
+ 136:	3f 93       	push	r19
+ 138:	4f 93       	push	r20
+ 13a:	5f 93       	push	r21
+ 13c:	6f 93       	push	r22
+ 13e:	7f 93       	push	r23
+ 140:	8f 93       	push	r24
+ 142:	9f 93       	push	r25
+ 144:	af 93       	push	r26
+ 146:	bf 93       	push	r27
+ 148:	ef 93       	push	r30
+ 14a:	ff 93       	push	r31
+	CallBack[2]();
+ 14c:	e0 91 64 00 	lds	r30, 0x0064	; 0x800064 <__DATA_REGION_ORIGIN__+0x4>
+ 150:	f0 91 65 00 	lds	r31, 0x0065	; 0x800065 <__DATA_REGION_ORIGIN__+0x5>
+ 154:	09 95       	icall
+ 156:	ff 91       	pop	r31
+ 158:	ef 91       	pop	r30
+ 15a:	bf 91       	pop	r27
+ 15c:	af 91       	pop	r26
+ 15e:	9f 91       	pop	r25
+ 160:	8f 91       	pop	r24
+ 162:	7f 91       	pop	r23
+ 164:	6f 91       	pop	r22
+ 166:	5f 91       	pop	r21
+ 168:	4f 91       	pop	r20
+ 16a:	3f 91       	pop	r19
+ 16c:	2f 91       	pop	r18
+ 16e:	0f 90       	pop	r0
+ 170:	0f be       	out	0x3f, r0	; 63
+ 172:	0f 90       	pop	r0
+ 174:	1f 90       	pop	r1
+ 176:	18 95       	reti
+
+00000178 <_exit>:
+ 178:	f8 94       	cli
+
+0000017a <__stop_program>:
+ 17a:	ff cf       	rjmp	.-2      	; 0x17a <__stop_program>
